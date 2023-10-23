@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
+    <title>Emergency Alerts and Updates</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -24,7 +26,7 @@
 </div>
 
 <div class="big-bar">
-    <!-- This is the additional bar below the header -->
+ 
 </div>
 <div class="content" id="hazard-maps">
     <h2>Hazard Maps</h2>
@@ -34,7 +36,7 @@
     <h2>Survival Tips</h2>
     <p>Learn essential survival tips and emergency preparedness strategies. Be ready for any unexpected situation.</p>
 </div>
-<div class="content" id="emergency-contacts">
+<div class "content" id="emergency-contacts">
     <h2>Emergency Contacts</h2>
     <p>Find important emergency contacts for your region, including local authorities, hospitals, and support organizations.</p>
 </div>
