@@ -1,0 +1,122 @@
+
+body, ul {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif; /* Apply 'Roboto' font to the entire document */
+}
+
+/* ... (existing styles) ... */
+
+/* Style the taskbar */
+.taskbar {
+    background-color: #ffffff;
+    color: #fafafa;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Roboto', sans-serif; /* Apply 'Roboto' font to the taskbar */
+}
+
+.taskbar-container {
+    display: flex;
+    justify-content: flex-end;
+    background-color: #ffffff; /* Adjust background color as needed */
+    padding: 10px; /* Adjust padding as needed */
+    font-family: 'Roboto', sans-serif; /* Apply 'Roboto' font to the taskbar container */
+}
+
+.taskbar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.taskbar li {
+    display: inline;
+    margin-right: 20px; /* Adjust spacing between buttons as needed */
+}
+
+.taskbar a {
+    text-decoration: none;
+    color: rgb(0, 0, 0); /* Adjust text color as needed */
+    font-weight: bold;
+}
+
+/* ... (existing styles) ... */
+
+/* Style the content area */
+.content {
+    padding: 20px;
+    font-family: 'Roboto', sans-serif; /* Apply 'Roboto' font to content sections */
+}
+
+.header {
+    background-image: url('images/headerimg.png'); /* Replace 'path/to/your/image.jpg' with the actual image URL */
+    background-size: cover; /* This ensures the image covers the entire header */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-position: center; /* Center the image horizontally and vertically */
+    color: #000000; /* Text color */
+    padding: 300px; /* Adjust padding as needed */
+    text-align: center;
+    font-family: 'Roboto', sans-serif; /* Apply 'Roboto' font to the header */
+}
+
+
+.big-bar {
+    background-color: #ffffff;
+    padding: 40px;
+    text-align: center;
+    color: #fff;
+    font-family: 'Roboto', sans-serif; /* Apply 'Roboto' font to the big bar */
+}
+
+/* Style headings within content sections */
+.content h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Style paragraph text within content sections */
+.content p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.5;
+}
+
+/* Add more specific styles for individual sections if needed */
+
+#home {
+    background-color: #f9f9f9; /* Customize the background for the Home section */
+}
+
+#hazard-maps {
+    background-color: #e6f7ff; /* Customize the background for Hazard Maps section */
+}
+
+#survival-tips {
+    background-color: #ffeb99; /* Customize the background for Survival Tips section */
+}
+
+#emergency-contacts {
+    background-color: #ffcccc; /* Customize the background for Emergency Contacts section */
+}
+
+#home h1 {
+    color: #ffffff; /* Text color for the header content */
+}
+
+.send-report-button {
+    background-color: #ff0000; /* Button background color */
+    color: #fff; /* Button text color */
+    padding: 10px 20px; /* Adjust padding as needed */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.send-report-button:hover {
+    background-color: #c77272; /* Button background color on hover */
+}
+
