@@ -6,16 +6,16 @@ body, ul {
 
 .taskbar {
     background-color: #ffffff;
-    color: #fafafa;
+    color: #160303;
     padding: 10px;
     display: flex;
     justify-content: space-between;
     font-family: 'Roboto', sans-serif;
+    border-radius: 50px;
 }
 
 .taskbar-container {
     display: flex;
-    justify-content: flex-end;
     background-color: #ffffff;
     padding: 10px;
     font-family: 'Roboto', sans-serif;
@@ -36,6 +36,11 @@ body, ul {
     text-decoration: none;
     color: rgb(0, 0, 0);
     font-weight: bold;
+}
+
+.taskbar ul li i {
+    color: #333;
+    margin-right: 5px;
 }
 
 .content {
@@ -95,15 +100,33 @@ body, ul {
 }
 
 .send-report-button {
-    background-color: #ff0000;
-    color: #fff;
+    background-color: #b90000;
+    color: #ffffff;
     padding: 10px 20px;
     border: none;
-    border-radius: 5px;
+    border-radius: 50px;
     cursor: pointer;
     font-weight: bold;
 }
 
 .send-report-button:hover {
     background-color: #c77272;
+}
+
+.taskbar ul li:hover i {
+    color: #ff0000;
+    transition: color 0.3s;
+}
+
+.taskbar ul li:hover a {
+    color: #ff3300;
+    transition: color 0.3s;
+}
+
+.centered {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
 }
