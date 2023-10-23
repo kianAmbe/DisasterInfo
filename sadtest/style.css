@@ -1,28 +1,24 @@
-
 body, ul {
     margin: 0;
     padding: 0;
-    font-family: 'Roboto', sans-serif; /* Apply 'Roboto' font to the entire document */
+    font-family: 'Roboto', sans-serif;
 }
 
-/* ... (existing styles) ... */
-
-/* Style the taskbar */
 .taskbar {
     background-color: #ffffff;
     color: #fafafa;
     padding: 10px;
     display: flex;
     justify-content: space-between;
-    font-family: 'Roboto', sans-serif; /* Apply 'Roboto' font to the taskbar */
+    font-family: 'Roboto', sans-serif;
 }
 
 .taskbar-container {
     display: flex;
     justify-content: flex-end;
-    background-color: #ffffff; /* Adjust background color as needed */
-    padding: 10px; /* Adjust padding as needed */
-    font-family: 'Roboto', sans-serif; /* Apply 'Roboto' font to the taskbar container */
+    background-color: #ffffff;
+    padding: 10px;
+    font-family: 'Roboto', sans-serif;
 }
 
 .taskbar ul {
@@ -33,83 +29,75 @@ body, ul {
 
 .taskbar li {
     display: inline;
-    margin-right: 20px; /* Adjust spacing between buttons as needed */
+    margin-right: 20px;
 }
 
 .taskbar a {
     text-decoration: none;
-    color: rgb(0, 0, 0); /* Adjust text color as needed */
+    color: rgb(0, 0, 0);
     font-weight: bold;
 }
 
-/* ... (existing styles) ... */
-
-/* Style the content area */
 .content {
     padding: 20px;
-    font-family: 'Roboto', sans-serif; /* Apply 'Roboto' font to content sections */
+    font-family: 'Roboto', sans-serif;
 }
 
 .header {
-    background-image: url('images/headerimg.png'); /* Replace 'path/to/your/image.jpg' with the actual image URL */
-    background-size: cover; /* This ensures the image covers the entire header */
-    background-repeat: no-repeat; /* Prevent the image from repeating */
-    background-position: center; /* Center the image horizontally and vertically */
-    color: #000000; /* Text color */
-    padding: 300px; /* Adjust padding as needed */
+    background-image: url('images/headerimg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #000000;
+    padding: 300px;
     text-align: center;
-    font-family: 'Roboto', sans-serif; /* Apply 'Roboto' font to the header */
+    font-family: 'Roboto', sans-serif;
 }
-
 
 .big-bar {
     background-color: #ffffff;
     padding: 40px;
     text-align: center;
     color: #fff;
-    font-family: 'Roboto', sans-serif; /* Apply 'Roboto' font to the big bar */
+    font-family: 'Roboto', sans-serif;
 }
 
-/* Style headings within content sections */
 .content h2 {
     font-size: 24px;
     color: #333;
     margin-bottom: 10px;
 }
 
-/* Style paragraph text within content sections */
 .content p {
     font-size: 16px;
     color: #555;
     line-height: 1.5;
 }
 
-/* Add more specific styles for individual sections if needed */
-
 #home {
-    background-color: #f9f9f9; /* Customize the background for the Home section */
+    background-color: #f9f9f9;
 }
 
 #hazard-maps {
-    background-color: #e6f7ff; /* Customize the background for Hazard Maps section */
+    background-color: #e6f7ff;
 }
 
 #survival-tips {
-    background-color: #ffeb99; /* Customize the background for Survival Tips section */
+    background-color: #ffeb99;
 }
 
 #emergency-contacts {
-    background-color: #ffcccc; /* Customize the background for Emergency Contacts section */
+    background-color: #ffcccc;
 }
 
 #home h1 {
-    color: #ffffff; /* Text color for the header content */
+    color: #ffffff;
 }
 
 .send-report-button {
-    background-color: #ff0000; /* Button background color */
-    color: #fff; /* Button text color */
-    padding: 10px 20px; /* Adjust padding as needed */
+    background-color: #ff0000;
+    color: #fff;
+    padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -117,6 +105,5 @@ body, ul {
 }
 
 .send-report-button:hover {
-    background-color: #c77272; /* Button background color on hover */
+    background-color: #c77272;
 }
-
