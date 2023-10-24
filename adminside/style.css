@@ -1,0 +1,66 @@
+body {
+    background-image: url('images/bg.jpg'); /* Set the background image */
+    background-size: cover; /* Cover the entire container */
+    background-repeat: no-repeat; /* Prevent background image from repeating */
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.login-container {
+    background-color: #ffffff44;
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 30px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 100px;
+}
+
+h2 {
+    color: #333;
+}
+
+form {
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+input[type="submit"] {
+    background-color: #000000;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+input[type="submit"]:hover {
+    background-color: #e72e2e;
+}
+
+/* Add styles for the password toggle icon */
+.password-container {
+    position: relative;
+}
+
+.password-container i {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
