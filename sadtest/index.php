@@ -14,7 +14,7 @@
         <ul>
             <li><i class="fa-solid fa-house"></i><a href="#home">Home</a></li>
             <li><i class="fa-solid fa-map"></i><a href="#hazard-maps">Hazard Maps</a></li>
-            <li><i class="fas fa-circle-info"></i><a href="#survival-tips">Survival Tips</a></li>
+            <li><i class="fa-solid fa-campground"></i><a href="#survival-tips">Survival Tips</a></li>
             <li><i class="fas fa-address-book"></i><a href="#emergency-contacts">Emergency Contacts</a></li>
         </ul>
     </div>
@@ -22,7 +22,7 @@
 
 <div class="header" id="home">
     <h1>Emergency Alerts and Updates: Disaster Information</h1>
-    <button class="send-report-button">Send Report</button>
+    <button class="send-report-button" onclick="redirectToReportPage()">Submit Report</button>
 </div>
 
 <div class="big-bar">
@@ -36,10 +36,17 @@
     <h2>Survival Tips</h2>
     <p>Learn essential survival tips and emergency preparedness strategies. Be ready for any unexpected situation.</p>
 </div>
-<div class "content" id="emergency-contacts">
+<div class="content" id="emergency-contacts">
     <h2>Emergency Contacts</h2>
     <p>Find important emergency contacts for your region, including local authorities, hospitals, and support organizations.</p>
 </div>
+
+<script>
+    function redirectToReportPage() {
+        // Redirect the user to the report.php page
+        window.location.href = "report.php";
+    }
+</script>
 </body>
 </html>
 
