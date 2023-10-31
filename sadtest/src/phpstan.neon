@@ -1,0 +1,13 @@
+parameters:
+  level: 5
+  paths:
+    - C:\xampp\htdocs\sadtest
+  ignoreErrors:
+    - # Ignore a specific file
+        message: 'Cannot find class SomeClass'
+        paths:
+          - C:\xampp\htdocs\sadtest/ignored_file.php
+    - # Ignore files in a specific directory
+        message: 'Cannot find class AnotherClass'
+        paths:
+          - C:\xampp\htdocs/sadtest/ignore_this_directory/

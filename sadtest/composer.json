@@ -1,0 +1,14 @@
+{
+    "name": "evsucot0282/sadtest",
+    "description": "test",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Kristoffe Angelo P. Ambe",
+            "email": "2100782@lnu.edu.ph"
+        }
+    ],
+    "require": {
+        "php-webdriver/webdriver": "^1.15"
+    }
+}
