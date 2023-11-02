@@ -15,7 +15,7 @@ if (!isset($_SESSION["user_id"])) {
 <head>
     <meta charset="UTF-8">
     <title>My Reports</title>
-    <link rel="stylesheet" type="text/css" href="myreports.css">
+    <link rel="stylesheet" type="text/css" href="css/myreports.css">
     <style>
         /* Style the container div for the button */
         .button-container {

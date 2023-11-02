@@ -26,7 +26,7 @@ $stmt->close();
     <meta charset="UTF-8">
     <title>Emergency Alerts and Updates</title>
     <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" type="text/css" href="contactsstyle.css">
+    <link rel="stylesheet" type="text/css" href="css/contactsstyle.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
@@ -72,7 +72,8 @@ $stmt->close();
     
     <h1>Welcome, <span class="styled-username"><?php echo $user_name; ?></span></h1>
     <h1>Emergency Alerts and Updates: Disaster Information</h1>
-    <button class="send-report-button" onclick="redirectToReportPage()">Submit Report</button>
+    <button class="send-report-button" onclick="openModal()">Submit Report</button>
+
     
 </div>
 
@@ -190,7 +191,46 @@ $stmt->close();
         window.location.href = "report.php";
     }
 </script>
+
+<script>
+    function confirmLogout() {
+        if (confirm("Are you sure you want to logout?")) {
+            window.location.href = "login.php";
+        }
+    }
+
+    function openModal() {
+        document.getElementById("reportModal").style.display = "block";
+    }
+
+    function closeModal() {
+        document.getElementById("reportModal").style.display = "none";
+    }
+</script>
+
+<div id="reportModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>Submit a Report</h2>
+        <form action="process_report.php" method="POST">
+            <!-- Add your report form fields here -->
+            <label for="emergency_type">Emergency Type:</label>
+            <input type="text" name="emergency_type" required>
+            <br>
+            <label for="description">Description:</label>
+            <textarea name="description" required></textarea>
+            <br>
+            <label for="submission_datetime">Date and Time:</label>
+            <input type="datetime-local" id="submission_datetime" name="submission_datetime" required>
+            <br>
+            <input type="submit" value="Submit Report">
+          
+        </form>
+    </div>
+</div>
+
+
+
+
 </body>
 </html>
-
-

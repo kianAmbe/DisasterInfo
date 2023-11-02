@@ -26,7 +26,7 @@ $stmt->close();
     <meta charset="UTF-8">
     <title>Emergency Alerts and Updates</title>
     <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" type="text/css" href="contactsstyle.css">
+    <link rel="stylesheet" type="text/css" href="css/contactsstyle.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>

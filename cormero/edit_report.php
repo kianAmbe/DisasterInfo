@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Edit Report</title>
-    <link rel="stylesheet" type="text/css" href="edit.css">
+    <link rel="stylesheet" type="text/css" href="css/edit.css">
 </head>
 <body>
     <div class="container">

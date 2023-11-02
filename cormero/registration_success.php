@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Registration Successful</title>
-    <link rel="stylesheet" type="text/css" href="reg.css"> <!-- Include your CSS file here -->
+    <link rel="stylesheet" type="text/css" href="css/reg.css"> <!-- Include your CSS file here -->
 </head>
 <body>
     <div class="success-container">

@@ -33,12 +33,12 @@ th, td {
 }
 
 th {
-    background-color: #574902;
+    background-color: #5a5955;
     color: #fff;
 }
 
 tr:nth-child(even) {
-    background-color: #a47a11;
+    background-color: #6d6b67;
 }
 
 /* Add Emergency Contact Form Styles */
@@ -108,7 +108,7 @@ form input[type="submit"]:hover {
 
 /* Style for the modal content */
 .modal-content {
-    background-color: #f69b9b;
+    background-color: #958686;
     margin: 10% auto;
     padding: 20px;
     border: 1px solid #888;
@@ -134,7 +134,7 @@ form input[type="submit"]:hover {
 
 /* Set the background image for the body */
 body {
-    background-image: url('images/adminbg.jpg');
+    background-image: url('images/weather.jpg');
     background-size: cover; /* You can adjust this property to control the image size */
     background-repeat: no-repeat;
     background-attachment: fixed; /* This ensures the image doesn't scroll with the content */

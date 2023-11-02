@@ -1,0 +1,31 @@
+/* Style for the login form container */
+.login-container {
+    width: 300px;
+    margin: 0 auto;
+    padding: 30px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+/* Style for the login form inputs */
+.login-input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Style for the login button */
+.login-button {
+    width: 50%; /* Set the width to 50% to center it */
+    padding: 10px;
+    background-color: #06085fcb;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    display: block; /* Add display: block to center it */
+    margin: 0 auto; /* Set both left and right margins to "auto" for centering */
+}
