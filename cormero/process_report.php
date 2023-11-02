@@ -49,7 +49,8 @@ if ($stmt) {
 
     if ($stmt->execute()) {
         // Data inserted successfully
-        echo "Report submitted successfully!";
+        // Display a JavaScript alert to inform the user and redirect
+        echo '<script>alert("Report submitted successfully!"); window.location.href = "index.php";</script>';
     } else {
         echo "Error: " . $stmt->error;
     }

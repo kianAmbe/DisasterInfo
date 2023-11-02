@@ -1,37 +1,18 @@
-<?php
-include "db_connection.php"; // Include the database configuration file
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $_POST["username"];
-    $password = $_POST["password"];
-
-    $sql = "SELECT id, name, password FROM user WHERE name = ?";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("s", $username);
-    $stmt->execute();
-    $stmt->bind_result($id, $name, $hashed_password);
-    $stmt->fetch();
-
-    if (password_verify($password, $hashed_password)) {
-        // Login successful
-        // You can set up a user session and redirect to a dashboard
-    } else {
-        // Login failed
-        // Handle the error, such as displaying a message to the user
-    }
-
-    $stmt->close();
-}
-?>
-
-
-
 <!DOCTYPE html>
 <html>
 <head>
     <title>Login</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="css/login.css">
+    <style>
+        /* Add custom CSS for the admin icon */
+        .admin-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
     <div class="login-container">
@@ -54,6 +35,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <p>Not registered? <a href="register.php">Register here</a></p>
     </div>
 
+    <!-- Add the admin icon -->
+    <a href="adminlogin.php" class="admin-icon" onclick="promptForAdminPassword()">
+        <i class="fa-solid fa-user-secret"></i>
+    </a>
+
     <script>
         var passwordInput = document.getElementById('password');
         var togglePasswordButton = document.getElementById('toggle-password');
@@ -67,6 +53,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 togglePasswordButton.innerHTML = '<i class="fa-regular fa-eye-slash"></i>'; // Change icon to "eye-slash"
             }
         });
+
+        function promptForAdminPassword() {
+            // Prompt the user for the admin password
+            var adminPassword = prompt("");
+
+            if (adminPassword === "admin") {
+                // If the admin password is correct, proceed to adminlogin.php
+                window.location.href = "adminlogin.php";
+            } else {
+                alert("Access denied.");
+                window.location.href = "login.php";
+                alert("Incorrect admin password. Access denied.");
+              
+            }
+        }
     </script>
 </body>
 </html>
