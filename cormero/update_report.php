@@ -14,35 +14,36 @@ if ($conn->connect_error) {
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Retrieve form data
-    $reportId = $_POST["id"];
-    $name = $_POST["name"];
-    $emergencyType = $_POST["emergency_type"];
-    $description = $_POST["description"];
-    $status = $_POST["status"]; // Include status in form fields
+// Retrieve form data including the Remarks field
+$reportId = $_POST["id"];
+$name = $_POST["name"];
+$emergencyType = $_POST["emergency_type"];
+$description = $_POST["description"];
+$status = $_POST["status"];
+$remarks = $_POST["remarks"]; // Include remarks in form fields
 
-    // Construct the SQL query to update the report
-   // Construct the SQL query to update the report
-$sql = "UPDATE report SET user_name = ?, emergency_type = ?, description = ?, status = ? WHERE id = ?";
+// Construct the SQL query to update the report
+$sql = "UPDATE report SET user_name = ?, emergency_type = ?, description = ?, status = ?, remarks = ? WHERE id = ?";
 
+$stmt = $conn->prepare($sql);
 
-    $stmt = $conn->prepare($sql);
+if ($stmt) {
+    $stmt->bind_param("sssssi", $name, $emergencyType, $description, $status, $remarks, $reportId);
 
-    if ($stmt) {
-        $stmt->bind_param("ssssi", $name, $emergencyType, $description, $status, $reportId);
-
-        if ($stmt->execute()) {
-            // Report updated successfully
-            header("Location: admin.php"); // Redirect to the list of reports
-            exit();
-        } else {
-            echo "Error updating report: " . $stmt->error;
-        }
-
-        // Close the statement
-        $stmt->close();
+    if ($stmt->execute()) {
+        // Report updated successfully
+        header("Location: admin.php"); // Redirect to the list of reports
+        exit();
     } else {
-        echo "Error: " . $conn->error;
+        echo "Error updating report: " . $stmt->error;
     }
+
+    // Close the statement
+    $stmt->close();
+} else {
+    echo "Error: " . $conn->error;
+}
+
 }
 
 // Close the database connection

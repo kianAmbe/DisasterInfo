@@ -40,6 +40,10 @@
         <label for="description">Description:</label>
         <textarea id="description" name="description" rows="4" required></textarea>
 
+        <label for="submission_datetime">Date and Time:</label>
+        <input type="datetime-local" id="submission_datetime" name="submission_datetime" required>
+
+
         <button class="submit-button" type="submit">Submit Report</button>
         <button class="go-to-index-button button-margin" onclick="redirectToIndexPage()">Go Home</button>
     </form>

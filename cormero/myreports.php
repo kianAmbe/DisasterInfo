@@ -48,7 +48,7 @@ if (!isset($_SESSION["user_id"])) {
         $user_id = $_SESSION["user_id"];
 
         // Query to fetch the user's reports
-        $sql = "SELECT emergency_type, description, status FROM report WHERE user_id = ?";
+        $sql = "SELECT emergency_type, description, status,remarks, submission_datetime FROM report WHERE user_id = ?";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("i", $user_id);
         $stmt->execute();
@@ -56,13 +56,15 @@ if (!isset($_SESSION["user_id"])) {
 
         if ($result->num_rows > 0) {
             echo "<table>";
-            echo "<tr><th>Emergency Type</th><th>Description</th><th>Status</th></tr>";
+            echo "<tr><th>Emergency Type</th><th>Description</th><th>Status</th><th>Remarks</th><th>Submission Date and Time</th></tr>";
 
             while ($row = $result->fetch_assoc()) {
                 echo "<tr>";
                 echo "<td>" . $row["emergency_type"] . "</td>";
                 echo "<td>" . $row["description"] . "</td>";
                 echo "<td>" . $row["status"] . "</td>";
+                echo "<td>" . $row["remarks"] . "</td>";
+                echo "<td>" . $row["submission_datetime"] . "</td>";
                 echo "</tr>";
             }
 

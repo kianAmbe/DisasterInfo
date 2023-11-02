@@ -32,18 +32,20 @@ $stmt->fetch();
 $stmt->close();
 
 // Get data from the form
+// Get data from the form
 $emergency_type = $_POST['emergency_type'];
 $description = $_POST['description'];
+$submission_datetime = $_POST['submission_datetime']; // Retrieve the date and time from the form
 
 // Set the status to "Pending"
 $status = "Pending";
 
-// Insert data into the database with the associated user ID and name
-$sql = "INSERT INTO report (user_id, user_name, emergency_type, description, status) VALUES (?, ?, ?, ?, ?)";
+// Insert data into the database with the associated user ID, name, and submission datetime
+$sql = "INSERT INTO report (user_id, user_name, emergency_type, description, status, submission_datetime) VALUES (?, ?, ?, ?, ?, ?)";
 $stmt = $conn->prepare($sql);
 
 if ($stmt) {
-    $stmt->bind_param("issss", $user_id, $user_name, $emergency_type, $description, $status);
+    $stmt->bind_param("isssss", $user_id, $user_name, $emergency_type, $description, $status, $submission_datetime);
 
     if ($stmt->execute()) {
         // Data inserted successfully

@@ -40,6 +40,8 @@
                 echo "Name: <input type='text' name='name' value='" . $row["user_name"] . "'><br>";
                 echo "Emergency Type: <input type='text' name='emergency_type' value='" . $row["emergency_type"] . "'><br>";
                 echo "Description: <textarea name='description'>" . $row["description"] . "</textarea><br>";
+                echo "Remarks: <textarea name='remarks'>" . $row["remarks"] . "</textarea><br>";
+
                 
                 // Add a dropdown select for status
                 echo "Status: ";

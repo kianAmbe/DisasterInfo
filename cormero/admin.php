@@ -36,7 +36,7 @@
     if ($result->num_rows > 0) {
         echo "<h2>Reports</h2>";
         echo "<table border='1'>";
-        echo "<tr><th>Name</th><th>Emergency Type</th><th>Description</th><th>Status</th><th>Remarks</th><th>Actions</th></tr>"; // Added "Remarks" column header
+        echo "<tr><th>Name</th><th>Emergency Type</th><th>Description</th><th>Status</th><th>Remarks</th><th>Report Date and Time</th><th>Actions</th></tr>"; // Added "Submission Datetime" column header
         while ($row = $result->fetch_assoc()) {
             echo "<tr>";
             echo "<td>" . $row["user_name"] . "</td>";
@@ -44,6 +44,7 @@
             echo "<td>" . $row["description"] . "</td>";
             echo "<td>" . $row["status"] . "</td>";
             echo "<td>" . $row["remarks"] . "</td>"; // Display the "remarks" column
+            echo "<td>" . $row["submission_datetime"] . "</td>"; // Display the "submission_datetime" column
             echo "<td><a class='delete-button' href='delete_report.php?id=" . $row["id"] . "'><i class='fa-solid fa-trash'></i></a>";
             echo " <a class='edit-button' href='edit_report.php?id=" . $row["id"] . "'><i class='fa-solid fa-pen-to-square'></i></a></td>";
             echo "</tr>";
@@ -63,6 +64,7 @@
     </div>
 </body>
 </html>
+
 
 
 
