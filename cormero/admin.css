@@ -24,7 +24,7 @@ table {
 }
 
 table, th, td {
-    border: 1px solid #ccc;
+    border: 1px solid #1f1d1d;
 }
 
 th, td {
@@ -33,10 +33,120 @@ th, td {
 }
 
 th {
-    background-color: #f70b0b;
+    background-color: #574902;
     color: #fff;
 }
 
 tr:nth-child(even) {
-    background-color: #f2f2f2;
+    background-color: #a47a11;
 }
+
+/* Add Emergency Contact Form Styles */
+form {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #f5f5f5;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+form input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+form input[type="submit"] {
+    background: #007bff;
+    color: #0f0f0f;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+    background: #0056b3;
+}
+
+/* Optional: Style success and error messages */
+.success-message {
+    color: #28a745;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.error-message {
+    color: #dc3545;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+/* Style for the modal container */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Style for the modal content */
+.modal-content {
+    background-color: #f69b9b;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+/* Style for the close button */
+.close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Style for the close button on hover */
+.close:hover {
+    color: red;
+}
+
+/* Set the background image for the body */
+body {
+    background-image: url('images/adminbg.jpg');
+    background-size: cover; /* You can adjust this property to control the image size */
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* This ensures the image doesn't scroll with the content */
+}
+
+/* You may need to adjust the text color to make it visible against the background image */
+/* For example, you can set the text color to white: */
+body {
+    color: #fff;
+}
+
+
+
+
+

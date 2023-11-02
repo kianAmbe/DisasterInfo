@@ -47,7 +47,7 @@ $stmt->close();
         </ul>
         <div class="buttons-right">
             <button class="reports-button" onclick="redirectToMyReports()">My Reports</button>
-            <button class="logout-button" onclick="confirmLogout()">Logout</button>
+            <button class="logout-button" onclick="confirmLogout()">Admin</button>
         </div>
     </div>
 </div>
@@ -55,9 +55,9 @@ $stmt->close();
 <script>
     function confirmLogout() {
         // Display a confirmation prompt
-        if (confirm("Are you sure you want to logout?")) {
+        if (confirm("Go to admin side?")) {
             // If the user confirms, redirect to login.php
-            window.location.href = "login.php";
+            window.location.href = "admin.php";
         }
     }
 

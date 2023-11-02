@@ -1,52 +1,69 @@
+/* Reset some default styles */
 body, ul {
     margin: 0;
     padding: 0;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Arial';
 }
 
-.taskbar {
+/* Common styles for elements in the taskbar */
+.taskbar-container, .taskbar {
     background-color: #ffffff;
     color: #160303;
-    padding: 10px;
+    padding: 0px;
+    margin-top: 0px;
+    font-family: 'Arial';
+}
+
+/* Taskbar layout */
+.taskbar {
     display: flex;
     justify-content: space-between;
-    font-family: 'Roboto', sans-serif;
-    border-radius: 50px;
+    align-items: center;
 }
 
-.taskbar-container {
+/* Logo style */
+.logo {
     display: flex;
-    background-color: #ffffff;
-    padding: 10px;
-    font-family: 'Roboto', sans-serif;
+    align-items: center;
+    margin-right: 20px;
+    margin-top: 0px;
 }
 
+.logo img {
+    max-width: 60px; /* Adjust the width as needed */
+    max-height: 60px; /* Adjust the height as needed */
+}
+
+
+/* List items in the taskbar */
 .taskbar ul {
-    list-style-type: none;
+    list-style: none;
     padding: 0;
     margin: 0;
+    display: flex;
 }
 
 .taskbar li {
-    display: inline;
     margin-right: 20px;
+    display: inline;
 }
 
+/* Styling for links in the taskbar */
 .taskbar a {
     text-decoration: none;
-    color: rgb(0, 0, 0);
+    color: #000;
     font-weight: bold;
+    margin-left: 5px;
 }
 
+/* Icons in the taskbar */
 .taskbar ul li i {
     color: #333;
     margin-right: 5px;
 }
 
-.content {
-    padding: 20px;
-    font-family: 'Roboto', sans-serif;
-}
+/* Rest of your styles... */
+
 
 .header {
     background-image: url('images/headerimg.png');
@@ -56,7 +73,7 @@ body, ul {
     color: #000000;
     padding: 300px;
     text-align: center;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Arial' ;
 }
 
 .big-bar {
@@ -149,12 +166,12 @@ body, ul {
 }
 
 .taskbar ul li:hover i {
-    color: #ff0000;
+    color: #1E90FF;
     transition: color 0.3s;
 }
 
 .taskbar ul li:hover a {
-    color: #ff3300;
+    color: #1E90FF;
     transition: color 0.3s;
 }
 
@@ -181,35 +198,22 @@ body, ul {
     font-style: italic; /* Italicize the text */
 }
 
-.logout-button {
-    background-color: #FF6347; /* Red */
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    text-align: center;
-    border-radius: 50px;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    cursor: pointer;
-    margin-right: 10px; /* Adjust margin as needed */
-}
+/* ... Previous CSS rules ... */
 
-.logout-button:hover {
-    background-color: #FF0000; /* Brighter red on hover */
-}
+/* Style for the My Reports button */
+/* ... Previous CSS rules ... */
 
 /* Style for the My Reports button */
 .reports-button {
-    background-color: #4682B4; /* Steel Blue */
+    background-color: #252525; /* Steel Blue */
     color: white;
     border: none;
-    padding: 10px 20px;
+    padding: 10px 20px 5px 15px;
     text-align: center;
-    border-radius: 50px;
+    border-radius: 10px;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 14px;
     cursor: pointer;
 }
 
@@ -217,3 +221,26 @@ body, ul {
     background-color: #1E90FF; /* Brighter steel blue on hover */
 }
 
+/* Style for the Logout button */
+.logout-button {
+    background-color: #1E90FF; /* Red */
+    color: white;
+    border: none;
+    padding: 10px 25px 5px 20px;
+    text-align: center;
+    border-radius: 10px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.logout-button:hover {
+    background-color: #2c2c2c; /* Brighter red on hover */
+}
+
+.buttons-right {
+    margin-left: auto; /* Push the buttons to the right */
+}
+
+/* ... More CSS rules ... */
