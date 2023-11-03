@@ -1,0 +1,132 @@
+body, ul {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.taskbar {
+    background-color: #ffffff;
+    color: #160303;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 50px;
+}
+
+.taskbar-container {
+    display: flex;
+    background-color: #ffffff;
+    padding: 10px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.taskbar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.taskbar li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.taskbar a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+}
+
+.taskbar ul li i {
+    color: #333;
+    margin-right: 5px;
+}
+
+.content {
+    padding: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.header {
+    background-image: url('images/headerimg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #000000;
+    padding: 300px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+.big-bar {
+    background-color: #ffffff;
+    padding: 40px;
+    text-align: center;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+}
+
+.content h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.content p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.5;
+}
+
+#home {
+    background-color: #f9f9f9;
+}
+
+#hazard-maps {
+    background-color: #e6f7ff;
+}
+
+#survival-tips {
+    background-color: #ffeb99;
+}
+
+#emergency-contacts {
+    background-color: #ffcccc;
+}
+
+#home h1 {
+    color: #ffffff;
+}
+
+.send-report-button {
+    background-color: #b90000;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.send-report-button:hover {
+    background-color: #c77272;
+}
+
+.taskbar ul li:hover i {
+    color: #ff0000;
+    transition: color 0.3s;
+}
+
+.taskbar ul li:hover a {
+    color: #ff3300;
+    transition: color 0.3s;
+}
+
+.centered {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
