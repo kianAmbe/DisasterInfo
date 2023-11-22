@@ -1,0 +1,28 @@
+        /* Apply background image */
+        body {
+            background-image: url('images/bg.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+
+        /* Add additional styles as needed */
+        /* For example, style for a heading */
+        h1 {
+            font-size: 48px;
+        }
+
+        /* Style for a container */
+        .container {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+        }

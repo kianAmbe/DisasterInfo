@@ -1,0 +1,17 @@
+parameters:
+    level: 5
+    ignoreErrors:
+        - '#Variable \$hashed_password might not be defined.#'
+        - '#Variable \$id might not be defined.#'
+        - '#Variable \$name might not be defined.#'
+        - '#Variable \$hashed_password might not be defined.#'
+        - '#Variable \$id might not be defined.#'
+        - '#Variable \$name might not be defined.#'
+        - '#Variable \$conn might not be defined.#'
+    paths:
+        - myreports.php 
+        - process_login.php 
+        - process_register.php 
+        - process_report.php 
+        - register.php 
+    
