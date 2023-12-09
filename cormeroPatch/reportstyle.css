@@ -1,0 +1,135 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('images/bg2.jpg');
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 500px;
+    padding: 50px;
+    background-color: rgba(255, 255, 255, 0.2); /* Low-opacity white background */
+    backdrop-filter: blur(10px); /* Apply blur effect */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    text-align: center;
+    transition: background-color 0.3s ease-in-out;
+}
+
+h2 {
+    text-align: center;
+    color: #003c5f;
+    transition: color 0.3s ease-in-out;
+}
+
+form {
+    text-align: left;
+}
+
+label,
+input,
+textarea {
+    display: block;
+    margin-bottom: 10px;
+}
+
+label {
+    font-weight: regular;
+    color: #012d46;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 16px;
+    transition: border-color 0.3s ease-in-out;
+}
+.form-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* Style the buttons */
+        .submit-button, .go-to-index-button {
+            background-color: #ffffff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        /* Style the margin between buttons */
+        .button-margin {
+            margin-left: 10px; /* Adjust the margin as needed */
+        }
+textarea {
+    resize: vertical;
+}
+
+input[type="file"] {
+    margin-top: 5px;
+}
+
+button[type="submit"],
+.go-to-index-button {
+    background-color: #ffffff;
+    color: #008dde;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 50px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    box-shadow: 0px 4px 6px rgba(255, 0, 0, 0.1);
+}
+
+button[type="submit"]:hover,
+.go-to-index-button:hover {
+    background-color: #e6e6e6 !important; 
+}
+input[type="datetime-local"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #dadada;
+    border-radius: 3px;
+    font-size: 16px;
+    transition: border-color 0.3s ease-in-out;
+}
+
+input[type="datetime-local"]:focus {
+    border-color: #00A3FF; /* Change border color on focus */
+}
+.form-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Style the buttons */
+.submit-button, .go-to-index-button {
+    background-color: #fff3f3 !important;
+    color: #00A3FF !important;
+    border: none;
+    padding: 10px 40px !important;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Style the margin between buttons */
+.button-margin {
+    margin-left: 10px; /* Adjust the margin as needed */
+}

@@ -1,0 +1,57 @@
+/* Resetting default margin and padding */
+body, h1 {
+    margin: 0;
+    padding: 0;
+}
+
+/* Centering the content vertically and horizontally */
+html, body {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4; /* Setting a background color */
+}
+
+.container {
+    text-align: center;
+}
+
+.message {
+    margin-bottom: 20px;
+}
+
+.message h1 {
+    font-size: 24px;
+    color: #333;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-button, .register-button {
+    display: inline-block;
+    padding: 12px 24px;
+    margin: 0 10px;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.login-button {
+    background-color: #3498db;
+}
+
+.register-button {
+    background-color: #2ecc71;
+}
+
+.login-button:hover, .register-button:hover {
+    background-color: #2980b9;
+}

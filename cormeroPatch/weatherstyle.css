@@ -1,0 +1,63 @@
+/* Add your CSS styles for the weather container here */
+.weather-container {
+    width: 300px;
+    background-color: #becedd56;
+    background-size: cover; /* Cover the entire container */
+    background-repeat: no-repeat; /* Prevent background repetition */
+    background-position: center; /* Center the background image */
+    padding: 20px;
+    border: 1px solid #997e7e00;
+    border-radius: 20px;
+    margin: 20px auto;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    color: #fff; /* Set the text color to white for better visibility */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition effect */
+    cursor: pointer;
+}
+
+/* Style the heading */
+.weather-container h1 {
+    color: #fff; /* White */
+    font-size: 24px;
+}
+
+/* Style the weather information paragraphs */
+.weather-container p {
+    color: #fff; /* White */
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+/* Style the icons */
+.weather-container i {
+    font-size: 20px;
+    margin-right: 5px;
+}
+
+/* Style individual weather details */
+.weather-container .location {
+    color: #fff; /* White */
+}
+
+.weather-container .time {
+    color: #fff; /* White */
+}
+
+.weather-container .temperature {
+    color: #f22400; /* Tomato Red */
+}
+
+.weather-container .humidity {
+    color: #1e90ff; /* Dodger Blue */
+}
+
+.weather-container .cloud-cover {
+    color: #808080; /* Gray */
+}
+
+/* Add hover styles */
+.weather-container:hover {
+    background-color: #26252b; /* Change background color on hover */
+    box-shadow: 0px 10px 10px rgba(23, 12, 65, 0.3); /* Add shadow on hover */
+}

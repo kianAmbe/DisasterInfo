@@ -1,0 +1,81 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+h2 {
+    color: #333;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ccc;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #333;
+    color: #fff;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #ddd;
+}
+
+.styled-username {
+    color: rgb(160, 49, 30); /* Set text color to green */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add a shadow to the text */
+    font-style: italic; /* Italicize the text */
+}
+
+/* Style the legend */
+.legend {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Style for each status icon */
+.status-icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    border-radius: 50%; /* Makes the icon a circle */
+}
+
+.status-pending {
+    background-color: #FFA500; /* Orange */
+}
+
+.status-in-progress {
+    background-color: #008000; /* Green */
+}
+
+.status-completed {
+    background-color: #0000FF; /* Blue */
+}
+

@@ -1,0 +1,30 @@
+parameters:
+    level: 4
+    paths:
+        - add_emergency_contact.php
+        - admin.php
+        - db_connection.php
+        - delete_report.php
+        - edit_report.php
+        - email_validation.php
+        - get_current_time.php
+        - get_messages.php
+        - helpdesk.php
+        - index.php
+        - index2.php
+        - login.php
+        - process_login.php
+        - process_register.php
+        - process_report.php
+        - process_report2.php
+        - register.php
+        - registration_success.php
+        - registration_validation.php
+        - report.php
+        - report2.php
+        - send_announcements.php
+        - send_message.php
+        - update_report.php
+        - volunteer.php
+        - weather.php
+    
