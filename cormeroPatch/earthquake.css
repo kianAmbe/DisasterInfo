@@ -1,0 +1,52 @@
+/* Reset default styles */
+body, h1 {
+    margin: 0;
+    padding: 0;
+}
+
+/* Styles for the container */
+.container {
+    width: 100%;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+}
+
+/* Header styles */
+header {
+    
+    background-color: #00A3FF;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Table styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+/* Highlight magnitudes equal to or higher than 5 */
+td.magnitude {
+    color: #000;
+}
+
+td.magnitude.high {
+    color: red;
+    font-weight: bold;
+}
+
+tr.high-magnitude {
+    background-color: #ffe6e6; /* Light red background for high magnitudes */
+}

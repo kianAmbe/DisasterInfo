@@ -19,7 +19,6 @@ try {
 
     // Assuming you have a database connection for reports
     $stmtReports = $pdo->prepare("SELECT emergency_type, description, status FROM report WHERE status = 'In Progress'");
-
     
     $stmtReports->execute();
     $reports = $stmtReports->fetchAll(PDO::FETCH_ASSOC);
@@ -64,11 +63,11 @@ try {
         }
 
         // Announcements sent successfully, redirect to admin page with a success flag
-        header("Location: admin.php?success=true");
+        header("Location: helpdesk.php?success=true");
         exit();
     } else {
         // If there are no completed reports, redirect to admin page with a no reports flag
-        header("Location: admin.php?noreports=true");
+        header("Location: helpdesk.php?noreports=true");
         exit();
     }
 } catch (Exception $e) {

@@ -45,11 +45,11 @@ try {
         }
 
         // Redirect to admin.php or any other page after sending emails
-        header("Location: admin.php?emails_sent=true");
+        header("Location: helpdesk.php?emails_sent=true");
         exit();
     } else {
         // If there are no users, handle accordingly
-        header("Location: admin.php?no_users=true");
+        header("Location: helpdesk.php?no_users=true");
         exit();
     }
 } catch (Exception $e) {

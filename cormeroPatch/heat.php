@@ -2,6 +2,16 @@
 session_start();
 include 'db_connection.php'; // Include your database connection file
 
+// Check if the user is logged in
+$user_name = null; // Initializing $user_name to null
+if (isset($_SESSION["user_name"])) {
+    $user_name = $_SESSION["user_name"];
+} else {
+    // Redirect to the login page if the user is not logged in
+    header("Location: login.php");
+    exit();
+}
+
 
 
 $messages = array();
@@ -61,22 +71,23 @@ if ($conn !== null) {
             </div>
            
             <ul>
-                <li><i class=""></i><a href="#get-involved">Get Involved</a></li>
-                <li><i class=""></i><a href="#emergency-contacts">Emergency Contacts</a></li>
+            <li><i class=""></i><a href="volunteer.php">Get Involved</a></li>
+        <li><i class=""></i><a href="index.php">Emergency Contacts</a></li>
             </ul>
             <div class="buttons-right">
-                <button class="logout-button" onclick="confirmLogout()">Logout</button>
-            </div>
+    <a href="logout.php" class="logout-button" onclick="return confirm('Are you sure you want to log out?')">Logout</a>
+</div>
         </div>
     </div>
 
     <header>
         <meta charset="UTF-8">
         <title>Emergency Alerts and Updates</title>
-        <link rel="stylesheet" type="text/css" href="earthquake.css">
+        <link rel="stylesheet" type="text/css" href="disaster.css">
         <link rel="stylesheet" type="text/css" href="css/contactsstyle.css">
         <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        
     </header>
 
         <!--Adi na didi an content-->

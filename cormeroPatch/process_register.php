@@ -9,9 +9,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $number = $_POST["number"];
     $address = $_POST["address"];
 
-    $sql = "INSERT INTO user ( name, email, password, number, address) VALUES (?, ?, ?, ?, ?, )";
+    $sql = "INSERT INTO user ( role, name, email, password, number, address) VALUES (?, ?, ?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("sssss", $username, $email, $password, $number, $address);
+    $stmt->bind_param("ssssss", $username, $email, $password, $number, $address, $role);
 
     if ($stmt->execute()) {
         // Registration successful

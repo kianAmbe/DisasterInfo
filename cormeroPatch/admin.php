@@ -1,4 +1,16 @@
 <?php
+session_start();
+include 'db_connection.php'; // Include your database connection file
+
+// Check if the user is logged in
+$user_name = null; // Initializing $user_name to null
+if (isset($_SESSION["user_name"])) {
+    $user_name = $_SESSION["user_name"];
+} else {
+    // Redirect to the login page if the user is not logged in
+    header("Location: login.php");
+    exit();
+}
 date_default_timezone_set('Asia/Manila'); // Set the timezone to Manila
 
 // Start a session to work with session variables
@@ -49,7 +61,9 @@ if (isset($_POST['message'])) {
     <meta charset="UTF-8">
     <title>Reports</title>
     <link rel="stylesheet" type="text/css" href="admin.css">
-    <button id="logout-link" class="btn">Logout</button>
+    <div class="buttons-right">
+    <a href="logout.php" class="logout-button" onclick="return confirm('Are you sure you want to log out?')">Logout</a>
+</div>
     <button id="add-contact-btn" class="btn">Add Emergency Contact</button>
     <button id="go-site" class="btn">Go Main Site</button>
     <button id="notify-all-btn" class="btn">Notify All Users</button>

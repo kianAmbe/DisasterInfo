@@ -11,6 +11,9 @@
         <form method="post" action="registration_validation.php">
             <label for="username">Name:</label>
             <input class="register-input" type="text" name="username" id="username" required><br>
+
+    
+
             <label for="email">Email:</label>
             <input class="register-input" type="email" name="email" id="email" required><br>
 

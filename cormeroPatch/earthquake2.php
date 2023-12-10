@@ -62,8 +62,8 @@ if ($conn !== null) {
             </div>
            
             <ul>
-                <li><i class=""></i><a href="#get-involved">Get Involved</a></li>
-                <li><i class=""></i><a href="#emergency-contacts">Emergency Contacts</a></li>
+            <li><i class=""></i><a href="volunteer.php">Get Involved</a></li>
+        <li><i class=""></i><a href="index2.php">Emergency Contacts</a></li>
             </ul>
             <div class="buttons-right">
                 <button class="logout-button" onclick="confirmLogout()">Logout</button>

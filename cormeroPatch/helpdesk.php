@@ -1,10 +1,28 @@
 <?php
+session_start();
+include 'db_connection.php'; // Include your database connection file
+
+// Check if the user is logged in
+$user_name = null; // Initializing $user_name to null
+if (isset($_SESSION["user_name"])) {
+    $user_name = $_SESSION["user_name"];
+} else {
+    // Redirect to the login page if the user is not logged in
+    header("Location: login.php");
+    exit();
+}
+
+date_default_timezone_set('Asia/Manila'); // Set the timezone to Manila
+
 // Start a session to work with session variables
 
 // Check if the message form is submitted
 if (isset($_POST['message'])) {
     // Handle message submission
     $message = $_POST['message'];
+
+    // Get the current date and time in the desired format, removing leading zeroes
+    $formattedDatetime = ltrim(date('Y-m-d H:i:s'), '0');
 
     // Perform any necessary validation on the message
     // Insert the message into the database
@@ -19,11 +37,11 @@ if (isset($_POST['message'])) {
         die("Connection failed: " . $conn->connect_error);
     }
 
-    // Prepare the SQL statement to insert the message into the database
-    $insertMessageSql = "INSERT INTO messages (message) VALUES (?)";
+    // Prepare the SQL statement to insert the message and timestamp into the database
+    $insertMessageSql = "INSERT INTO messages (message, timestamp) VALUES (?, ?)";
 
     $stmt = $conn->prepare($insertMessageSql);
-    $stmt->bind_param("s", $message);
+    $stmt->bind_param("ss", $message, $formattedDatetime);
 
     if ($stmt->execute()) {
         // Message was successfully inserted into the database
@@ -36,7 +54,6 @@ if (isset($_POST['message'])) {
     $stmt->close();
     $conn->close();
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -45,26 +62,30 @@ if (isset($_POST['message'])) {
     <meta charset="UTF-8">
     <title>Reports</title>
     <link rel="stylesheet" type="text/css" href="admin.css">
-    <button id="logout-link" class="btn">Logout</button>
-    <button id="add-contact-btn" class="btn">Add Emergency Contact</button>
+    <div class="buttons-right">
+    <a href="logout.php" class="logout-button" onclick="return confirm('Are you sure you want to log out?')">Logout</a>
+</div>
+
     <button id="go-site" class="btn">Go Main Site</button>
     <button id="notify-all-btn" class="btn">Notify All Users</button>
+    <button type="button" class="btn" onclick="sendAnnouncements()">Send Announcements</button>
+
+
+
 
     <div id="message-modal" class="modal">
     <div class="modal-content">
         <span class="close" id="close-message-modal">&times;</span>
         <h2>Compose Message</h2>
-        <form method="post" action="admin.php">
+        <form method="post" action="send_emails2.php">
+        <form method="post" action="send_message.php"> 
             <label for="message">Message:</label>
             <textarea name="message" id="message" required></textarea>
-            
-            <label for="datetime">Date and Time:</label>
-            <input type="datetime-local" name="datetime" id="datetime" required>
-            
             <input type="submit" value="Send Message">
         </form>
     </div>
 </div>
+
 
 
 
@@ -131,6 +152,34 @@ document.getElementById('logout-link').addEventListener('click', function(event)
     </div>
 </div>
 
+<script>
+// Get URL parameters
+const urlParams = new URLSearchParams(window.location.search);
+
+// Check for success flag and show alert
+if (urlParams.get('success')) {
+    alert('Announcements sent successfully!');
+}
+
+// Check for no reports flag and show alert
+if (urlParams.get('noreports')) {
+    alert('No approved reports to send.');
+}
+
+// Check for error flag and show alert
+if (urlParams.get('error')) {
+    alert('An error occurred while sending announcements.');
+}
+</script>
+
+<script>
+    function sendAnnouncements() {
+        window.location.href = 'send_announcements2.php';
+    }
+</script>
+
+
+
 
 <!-- JavaScript to show/hide the form -->
 <script>
@@ -173,24 +222,29 @@ document.getElementById('add-contact-btn').addEventListener('click', function() 
         if ($reportResult === false || $userResult === false || $emergencyContactResult === false) {
             die("Error: " . $conn->error);
         }
-        echo "</table>";
 
-        // Display emergency contact data
-        echo "<h2>Emergency Contact Table</h2>";
-        echo "<table border='1'>";
-        echo "<tr><th>ID</th><th>Name</th><th>Phone</th><th>Email</th></tr>";
         
 
-        while ($row = $emergencyContactResult->fetch_assoc()) {
+        // Display user data
+   
+        echo "<table border='1' id='users-table' class='hidden'>";
+        echo "<tr><th>ID</th><th>Name</th><th>Email</th><th>Number</th><th>Address</th></tr>";
+
+        while ($row = $userResult->fetch_assoc()) {
             echo "<tr>";
             echo "<td>" . $row["id"] . "</td>";
             echo "<td>" . $row["name"] . "</td>";
-            echo "<td>" . $row["phone"] . "</td>";
             echo "<td>" . $row["email"] . "</td>";
+            echo "<td>" . $row["number"] . "</td>";
+            echo "<td>" . $row["address"] . "</td>";
             echo "</tr>";
         }
 
         echo "</table>";
+
+        // Display emergency contact data
+        
+  
 
         // Display report data
         echo "<h2>Reports</h2>";
@@ -232,6 +286,22 @@ document.getElementById('add-contact-btn').addEventListener('click', function() 
 document.getElementById('close-modal').addEventListener('click', function() {
     var modal = document.getElementById('add-contact-modal');
     modal.style.display = 'none';
+});
+document.getElementById('toggle-users-table').addEventListener('click', function() {
+    var usersTable = document.getElementById('users-table');
+    if (usersTable.classList.contains('hidden')) {
+        usersTable.classList.remove('hidden');
+    } else {
+        usersTable.classList.add('hidden');
+    }
+});
+document.getElementById('toggle-emergency-table').addEventListener('click', function() {
+    var emergencyTable = document.getElementById('emergency-table');
+    if (emergencyTable.classList.contains('hidden')) {
+        emergencyTable.classList.remove('hidden');
+    } else {
+        emergencyTable.classList.add('hidden');
+    }
 });
 </script>
 </body>

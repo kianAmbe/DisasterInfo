@@ -123,10 +123,12 @@ $currentDateTime = date('Y-m-d h:i:s A');
 
 
    
-        <div class="buttons-right">
-            
-            <button class="logout-button" onclick="confirmLogout()">Logout</button>
-        </div>
+<!-- Add this button/link where you want the logout functionality -->
+<div class="buttons-right">
+    <a href="logout.php" class="logout-button" onclick="return confirm('Are you sure you want to log out?')">Logout</a>
+</div>
+
+
     </div>
 </div>
 
@@ -196,21 +198,26 @@ window.onclick = function(event) {
 <div class="big-bar">
     <div class="content" id="volunteered-activities">
         <h2>Volunteered Activities</h2>
-        <p>Explore interactive hazard maps to stay informed about potential risks in your area. Stay safe and be prepared.</p>
+        <p>Join various volunteer activities that can help and provide an impact to the community</p>
         <div class="slick-track" style="display: flex; justify-content: space-between; overflow-x: auto;">
-            <div class="slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" style="width: 209px;">
-                <div class="host-type-wrapper host-type-wrapper-farm">
-                    <a class="block host-type farm" href="/search/type_farm" tabindex="0">
-                        <div class="content">
-                            <img src="img/v1.jpg" alt="Blood Donation" class="host-type-image">
-                        </div>
-                    </a>
-                </div>
+        <div class="slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" style="width: 209px;">
+    <div class="host-type-wrapper host-type-wrapper-farm">
+        <a class="block host-type farm" href="https://redcross.org.ph/give-blood/" tabindex="0">
+            <div class="content">
+                <a href="https://redcross.org.ph/give-blood/">
+                    <img src="img/v1.jpg" alt="Blood Donation" class="host-type-image">
+                </a>
             </div>
+        </a>
+    </div>
+</div>
+
+
+            
 
             <div class="slick-slide slick-active" data-slick-index="1" aria-hidden="false" style="width: 209px;">
                 <div class="host-type-wrapper host-type-wrapper-farm">
-                    <a class="block host-type farm" href="/search/type_farm" tabindex="0">
+                    <a class="block host-type farm" href="https://www.trvst.world/climate-change/tree-planting-volunteer/" tabindex="0">
                         <div class="content">
                             <img src="img/v2.jpg" alt="Tree Planting Image" class="host-type-image">
                         </div>
@@ -220,7 +227,7 @@ window.onclick = function(event) {
 
             <div class="slick-slide slick-active" data-slick-index="1" aria-hidden="false" style="width: 209px;">
                 <div class="host-type-wrapper host-type-wrapper-farm">
-                    <a class="block host-type farm" href="/search/type_farm" tabindex="0">
+                    <a class="block host-type farm" href="https://www.earthday.org/actions/green-up-with-a-cleanup-volunteer-for-a-cleanup-in-your-community/" tabindex="0">
                         <div class="content">
                             <img src="img/v3.jpg" alt="tree Planting Image" class="host-type-image">
                         </div>
@@ -230,7 +237,7 @@ window.onclick = function(event) {
 
             <div class="slick-slide slick-active" data-slick-index="1" aria-hidden="false" style="width: 209px;">
                 <div class="host-type-wrapper host-type-wrapper-farm">
-                    <a class="block host-type farm" href="/search/type_farm" tabindex="0">
+                    <a class="block host-type farm" href="https://www.redcross.org/take-a-class/first-aid/first-aid-training" tabindex="0">
                         <div class="content">
                             <img src="img/v4.jpg" alt="First aid Image" class="host-type-image">
                         </div>
@@ -240,7 +247,7 @@ window.onclick = function(event) {
 
            <div class="slick-slide slick-active" data-slick-index="1" aria-hidden="false" style="width: 209px;">
                 <div class="host-type-wrapper host-type-wrapper-farm">
-                    <a class="block host-type farm" href="/search/type_farm" tabindex="0">
+                    <a class="block host-type farm" href="https://redcross.org.ph/emergency-response-unit/" tabindex="0">
                         <div class="content">
                             <img src="img/v5.jpg" alt="Emergency team Image" class="host-type-image">
                         </div>
@@ -250,7 +257,7 @@ window.onclick = function(event) {
 
             <div class="slick-slide slick-active" data-slick-index="1" aria-hidden="false" style="width: 209px;">
                 <div class="host-type-wrapper host-type-wrapper-farm">
-                    <a class="block host-type farm" href="/search/type_farm" tabindex="0">
+                    <a class="block host-type farm" href="https://conferences.nature.com/event/4014cd93-3105-481d-b403-317c2a1dd449/summary" tabindex="0">
                         <div class="content">
                             <img src="img/v6.jpg" alt="Nature Image" class="host-type-image">
                         </div>
@@ -260,6 +267,10 @@ window.onclick = function(event) {
         </div>
     </div>
 </div>
+
+<div class="map-container">
+    <iframe src="indexmap.php" frameborder="0" style="width: 100%; height: 400px; border: 1px solid #ccc;"></iframe>
+  </div>
 
 
 <div class="content" id="weather-side">
@@ -294,6 +305,7 @@ window.onclick = function(event) {
     });
 </script>
 
+<iframe src="earthquakeapi.php" frameborder="0" style="width: 100%; height: 500px; border: 1px solid #ccc;"></iframe>
 
 <div class="content" id="emergency-contacts">
     <h1>Emergency Contacts</h1>
