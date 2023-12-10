@@ -93,13 +93,23 @@ $currentDateTime = date('Y-m-d h:i:s A');
         <li><i class=""></i><a href="#emergency-contacts">Emergency Contacts</a></li>
         <li><i class=""></i> <a href="map2.php">Map of Tacloban</a></li>
         </ul>
+
    
         <div class="buttons-right">
-            <button class="reports-button" onclick="redirectToMyReports()">My Reports</button>
+        <button class="reports-button" onclick="redirectToNewsletterSignup()">Sign Up for Newsletter</button>
+
             <button class="logout-button" onclick="confirmLogout()">Log In</button>
         </div>
     </div>
 </div>
+
+<script>
+    function redirectToNewsletterSignup() {
+        // Redirect to the desired page
+        window.location.href = "newsletter.php";
+    }
+</script>
+
 
 <script>
     function toggleDropdown() {

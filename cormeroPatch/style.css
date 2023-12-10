@@ -281,7 +281,7 @@ body, ul {
 
 
 .reports-button {
-    background-color: #ffffff; /* Steel Blue */
+    background-color: #21dd4d; /* Steel Blue */
     color: white;
     border: none;
     padding: 10px 20px 5px 15px;
@@ -294,7 +294,7 @@ body, ul {
 }
 
 .reports-button:hover {
-    background-color: #f71414; /* Brighter steel blue on hover */
+    background-color: #00A3FF; /* Brighter steel blue on hover */
 }
 
 /* Style for the Logout button */

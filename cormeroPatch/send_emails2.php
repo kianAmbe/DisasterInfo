@@ -16,9 +16,15 @@ try {
     $stmtUsers->execute();
     $users = $stmtUsers->fetchAll(PDO::FETCH_ASSOC);
 
-    if ($users) {
-        // If there are users, proceed with sending the email
+    // Fetch email addresses from the newsmails table
+    $stmtNewsMails = $pdo->prepare("SELECT email FROM newsmails");
+    $stmtNewsMails->execute();
+    $newsmails = $stmtNewsMails->fetchAll(PDO::FETCH_ASSOC);
 
+    $allEmails = array_merge($users, $newsmails);
+
+    if ($allEmails) {
+        // If there are email addresses, proceed with sending the email
 
         $mail->SMTPDebug = 0;
         $mail->isSMTP();
@@ -36,20 +42,19 @@ try {
         $mail->Subject = 'ANNOUNCEMENT';
         $mail->Body = $message;
 
-        // Loop through users and send email to each
-        foreach ($users as $user) {
-            $email = $user['email'];
+        // Loop through email addresses and send email to each
+        foreach ($allEmails as $email) {
             $mail->clearAddresses();
-            $mail->addAddress($email);
+            $mail->addAddress($email['email']);
             $mail->send();
         }
 
-        // Redirect to admin.php or any other page after sending emails
+        // Redirect to helpdesk.php or any other page after sending emails
         header("Location: helpdesk.php?emails_sent=true");
         exit();
     } else {
-        // If there are no users, handle accordingly
-        header("Location: helpdesk.php?no_users=true");
+        // If there are no email addresses, handle accordingly
+        header("Location: helpdesk.php?no_emails=true");
         exit();
     }
 } catch (Exception $e) {
