@@ -202,9 +202,9 @@ window.onclick = function(event) {
         <div class="slick-track" style="display: flex; justify-content: space-between; overflow-x: auto;">
         <div class="slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" style="width: 209px;">
     <div class="host-type-wrapper host-type-wrapper-farm">
-        <a class="block host-type farm" href="https://redcross.org.ph/give-blood/" tabindex="0">
+        <a class="block host-type farm" href="blood.php" tabindex="0">
             <div class="content">
-                <a href="https://redcross.org.ph/give-blood/">
+                <a href="blood.php">
                     <img src="img/v1.jpg" alt="Blood Donation" class="host-type-image">
                 </a>
             </div>
@@ -217,7 +217,7 @@ window.onclick = function(event) {
 
             <div class="slick-slide slick-active" data-slick-index="1" aria-hidden="false" style="width: 209px;">
                 <div class="host-type-wrapper host-type-wrapper-farm">
-                    <a class="block host-type farm" href="https://www.trvst.world/climate-change/tree-planting-volunteer/" tabindex="0">
+                    <a class="block host-type farm" href="treeplanting.php" tabindex="0">
                         <div class="content">
                             <img src="img/v2.jpg" alt="Tree Planting Image" class="host-type-image">
                         </div>
@@ -227,7 +227,7 @@ window.onclick = function(event) {
 
             <div class="slick-slide slick-active" data-slick-index="1" aria-hidden="false" style="width: 209px;">
                 <div class="host-type-wrapper host-type-wrapper-farm">
-                    <a class="block host-type farm" href="https://www.earthday.org/actions/green-up-with-a-cleanup-volunteer-for-a-cleanup-in-your-community/" tabindex="0">
+                    <a class="block host-type farm" href="cleanup.php" tabindex="0">
                         <div class="content">
                             <img src="img/v3.jpg" alt="tree Planting Image" class="host-type-image">
                         </div>
@@ -237,7 +237,7 @@ window.onclick = function(event) {
 
             <div class="slick-slide slick-active" data-slick-index="1" aria-hidden="false" style="width: 209px;">
                 <div class="host-type-wrapper host-type-wrapper-farm">
-                    <a class="block host-type farm" href="https://www.redcross.org/take-a-class/first-aid/first-aid-training" tabindex="0">
+                    <a class="block host-type farm" href="aid.php" tabindex="0">
                         <div class="content">
                             <img src="img/v4.jpg" alt="First aid Image" class="host-type-image">
                         </div>
@@ -247,7 +247,7 @@ window.onclick = function(event) {
 
            <div class="slick-slide slick-active" data-slick-index="1" aria-hidden="false" style="width: 209px;">
                 <div class="host-type-wrapper host-type-wrapper-farm">
-                    <a class="block host-type farm" href="https://redcross.org.ph/emergency-response-unit/" tabindex="0">
+                    <a class="block host-type farm" href="ert.php" tabindex="0">
                         <div class="content">
                             <img src="img/v5.jpg" alt="Emergency team Image" class="host-type-image">
                         </div>
@@ -257,7 +257,7 @@ window.onclick = function(event) {
 
             <div class="slick-slide slick-active" data-slick-index="1" aria-hidden="false" style="width: 209px;">
                 <div class="host-type-wrapper host-type-wrapper-farm">
-                    <a class="block host-type farm" href="https://conferences.nature.com/event/4014cd93-3105-481d-b403-317c2a1dd449/summary" tabindex="0">
+                    <a class="block host-type farm" href="nature.php" tabindex="0">
                         <div class="content">
                             <img src="img/v6.jpg" alt="Nature Image" class="host-type-image">
                         </div>

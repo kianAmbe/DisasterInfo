@@ -30,9 +30,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt = $conn->prepare("INSERT INTO newsmails (name, email) VALUES (?, ?)");
     $stmt->bind_param("ss", $name, $email);
 
-    // Execute the prepared statement
     if ($stmt->execute()) {
-        echo "Signed up successfully for the newsletter!";
+        // Alert message in JavaScript upon successful signup
+        echo '<script>alert("Signed up successfully for the newsletter!");';
+        echo 'window.location.href = "newsletter.php";</script>';
+        exit; // Terminate script to prevent further execution
     } else {
         echo "Error: " . $stmt->error;
     }

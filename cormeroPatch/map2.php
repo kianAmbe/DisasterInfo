@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Leaflet Map with Search and Weather</title>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+  <title>Interactive Map</title>
   <style>
     /* Full-screen map */
     html, body {
@@ -15,113 +14,54 @@
     }
 
     #map {
-      height: calc(100% - 40px);
+      position: relative;
+      height: 100vh;
       width: 100%;
+      overflow: hidden;
     }
 
-    /* Search box styling */
-    .search-container {
+    .map-image {
       position: absolute;
-      z-index: 1000;
-      top: 20px;
-      left: 20px;
-      max-width: 300px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      max-width: 100%;
+      max-height: 100%;
     }
 
-    #search-input {
-      width: 100%;
-      padding: 10px;
-      font-size: 16px;
+    /* Heading style */
+    h1 {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 28px;
+      color: #333;
+    }
+
+    .go-home {
+      position: fixed;
+      bottom: 20px;
+      left: 20px; /* Changed the positioning to the left */
+      padding: 10px 20px;
+      background-color: #333;
+      color: #fff;
+      text-decoration: none;
       border-radius: 4px;
-      border: 1px solid #ccc;
-      background-color: #fff;
+      font-size: 16px;
+      z-index: 1000;
     }
 
-    .weather-info {
-      position: absolute;
-      top: 80px;
-      right: 20px;
-      background-color: rgba(255, 255, 255, 0.8);
-      padding: 10px;
-      border-radius: 5px;
+    .go-home:hover {
+      background-color: #555;
     }
   </style>
 </head>
 <body>
-  <div class="search-container">
-    <input id="search-input" type="text" placeholder="Search for a place">
+  <div id="map">
+    <img class="map-image" src="img/maptac.jpeg" alt="Map Image">
   </div>
 
-  <div id="map"></div>
-  
-  <div class="weather-info">
-    <h3>Weather Information</h3>
-    <p id="weather-data"></p>
-  </div>
+  <a href="index.php" class="go-home">Go Home</a>
 
-  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-  <script>
-    var map = L.map('map').setView([11.253823280334473, 124.96154022216797], 14);
 
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      maxZoom: 19
-    }).addTo(map);
-
-    var input = document.getElementById('search-input');
-
-    var marker;
-    var weatherDataElement = document.getElementById('weather-data');
-
-    input.addEventListener('input', function(e) {
-      if (marker) {
-        map.removeLayer(marker);
-      }
-    });
-
-    input.addEventListener('change', function(e) {
-      var query = e.target.value;
-      if (query !== '') {
-        searchLocation(query);
-      }
-    });
-
-    function searchLocation(query) {
-      fetch('https://nominatim.openstreetmap.org/search?format=json&q=' + query)
-        .then(response => response.json())
-        .then(data => {
-          if (data.length > 0) {
-            var latlng = [data[0].lat, data[0].lon];
-            if (marker) {
-              map.removeLayer(marker);
-            }
-            marker = L.marker(latlng).addTo(map);
-            map.setView(latlng, 14); // Set the zoom level as needed
-
-            // Fetch weather data for the searched location
-            fetchWeatherData(latlng[0], latlng[1]);
-          } else {
-            alert('Location not found');
-          }
-        })
-        .catch(error => console.error('Error searching location:', error));
-    }
-
-    // Function to fetch weather data from OpenWeatherMap API
-    function fetchWeatherData(latitude, longitude) {
-      var apiKey = 'bbea5e674c08d47a0081b150f920c38a'; // Replace with your OpenWeatherMap API key
-      var apiUrl = 'https://api.openweathermap.org/data/2.5/weather?lat=' + latitude + '&lon=' + longitude + '&appid=' + apiKey;
-
-      fetch(apiUrl)
-        .then(response => response.json())
-        .then(data => {
-          var weatherDescription = data.weather[0].description;
-          var temperature = (data.main.temp - 273.15).toFixed(2) + '°C';
-          var weatherInfo = 'Weather: ' + weatherDescription + '<br>Temperature: ' + temperature;
-
-          weatherDataElement.innerHTML = weatherInfo;
-        })
-        .catch(error => console.error('Error fetching weather:', error));
-    }
-  </script>
 </body>
 </html>
